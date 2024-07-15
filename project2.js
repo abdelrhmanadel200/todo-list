@@ -43,11 +43,11 @@ $(document).ready(function() {
             if (newTask !== ' ') {
                 taskCounter++;
                 if (dueDate && dueDate!== ''){
-                var taskHTML = '<li><span><span data-due-date="' + dueDate + '">' + taskCounter + '- ' + newTask + ' (Due: ' + dueDate + ')</span><button class="delete-btn">Delete</button></span></li>';              
+                var taskHTML = '<li><span data-due-date="' + dueDate + '">' + taskCounter + '- ' + newTask + ' (Due: ' + dueDate + ')</span><button class="delete-btn">Delete</button></li>';              
                   $('.todo-list').append(taskHTML);
             }
             else{
-                var taskHTML = '<li><span><span data-due-date="' + dueDate + '">' + taskCounter + '- ' + newTask + '</span><button class="delete-btn">Delete</button></span></li>';
+                var taskHTML = '<li><span data-due-date="' + dueDate + '">' + taskCounter + '- ' + newTask + '</span><button class="delete-btn">Delete</button></li>';
                 $('.todo-list').append(taskHTML);
             }   
                 $(this).val('');
@@ -112,7 +112,7 @@ $(document).ready(function() {
     $(document).on('blur', '.todo-list li input', function() {
         var newTaskText = $(this).val();
         var deleteBtnHTML = '<button class="delete-btn">Delete</button>';
-        $(this).parent().html('<span><span>' + newTaskText + '</span>' + deleteBtnHTML+'</span>');
+        $(this).parent().html('<span>' + newTaskText + '</span>' + deleteBtnHTML);
         $('.delete-btn').css({
             'background-color': 'red',
             'color': '#fff',
@@ -135,7 +135,7 @@ $(document).ready(function() {
         if (e.which === 13) {
             var newTaskText = $(this).val();
             var deleteBtnHTML = '<button class="delete-btn">Delete</button>';
-            $(this).parent().html('<span><span>' + newTaskText + '</span>' + deleteBtnHTML+'</span>');
+            $(this).parent().html('<span>' + newTaskText + '</span>' + deleteBtnHTML);
             $('.delete-btn').css({
                 'background-color': 'red',
                 'color': '#fff',
