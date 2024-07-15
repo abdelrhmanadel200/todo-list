@@ -22,8 +22,9 @@ $(document).ready(function() {
                 'padding': '10px 20px',
                 'font-size': '16px',
                 'cursor': 'pointer',
-                'margin-left': '500px',
-                'border-radius': '10px'
+                'margin-left': '80%',
+                'border-radius': '10px',
+                'max-width': '600px'
             });
             $('.delete-btn:hover').css({
                 'background-color': 'rgb(173, 0, 0)',
@@ -42,11 +43,11 @@ $(document).ready(function() {
             if (newTask !== ' ') {
                 taskCounter++;
                 if (dueDate && dueDate!== ''){
-                var taskHTML = '<li><span data-due-date="' + dueDate + '">' + taskCounter + '- ' + newTask + ' (Due: ' + dueDate + ')</span><button class="delete-btn">Delete</button></li>';              
+                var taskHTML = '<li><span><span data-due-date="' + dueDate + '">' + taskCounter + '- ' + newTask + ' (Due: ' + dueDate + ')</span><button class="delete-btn">Delete</button></span></li>';              
                   $('.todo-list').append(taskHTML);
             }
             else{
-                var taskHTML = '<li><span data-due-date="' + dueDate + '">' + taskCounter + '- ' + newTask + '</span><button class="delete-btn">Delete</button></li>';
+                var taskHTML = '<li><span><span data-due-date="' + dueDate + '">' + taskCounter + '- ' + newTask + '</span><button class="delete-btn">Delete</button></span></li>';
                 $('.todo-list').append(taskHTML);
             }   
                 $(this).val('');
@@ -59,8 +60,9 @@ $(document).ready(function() {
                     'padding': '10px 20px',
                     'font-size': '16px',
                     'cursor': 'pointer',
-                    'margin-left': '500px',
-                    'border-radius': '10px'
+                    'margin-left': '80%',
+                    'border-radius': '10px',
+                    'max-width': '600px'
                 });
                 $('.delete-btn:hover').css({
                     'background-color': 'rgb(173, 0, 0)',
@@ -110,7 +112,7 @@ $(document).ready(function() {
     $(document).on('blur', '.todo-list li input', function() {
         var newTaskText = $(this).val();
         var deleteBtnHTML = '<button class="delete-btn">Delete</button>';
-        $(this).parent().html('<span>' + newTaskText + '</span>' + deleteBtnHTML);
+        $(this).parent().html('<span><span>' + newTaskText + '</span>' + deleteBtnHTML+'</span>');
         $('.delete-btn').css({
             'background-color': 'red',
             'color': '#fff',
@@ -118,12 +120,13 @@ $(document).ready(function() {
             'padding': '10px 20px',
             'font-size': '16px',
             'cursor':'pointer',
-            'argin-left': '500px',
-            'border-radius': '10px'
+            'margin-left': '80%',
+            'border-radius': '10px',
+            'max-width': '600px'
         });
         $('.delete-btn:hover').css({
             'background-color': 'rgb(173, 0, 0)',
-            'transform': 'cale(1.1)',
+            'transform': 'scale(1.1)',
             'transition': 'all 0.3s ease-in-out'
         });
     });
@@ -132,7 +135,7 @@ $(document).ready(function() {
         if (e.which === 13) {
             var newTaskText = $(this).val();
             var deleteBtnHTML = '<button class="delete-btn">Delete</button>';
-            $(this).parent().html('<span>' + newTaskText + '</span>' + deleteBtnHTML);
+            $(this).parent().html('<span><span>' + newTaskText + '</span>' + deleteBtnHTML+'</span>');
             $('.delete-btn').css({
                 'background-color': 'red',
                 'color': '#fff',
@@ -140,12 +143,13 @@ $(document).ready(function() {
                 'padding': '10px 20px',
                 'font-size': '16px',
                 'cursor': 'pointer',
-                'margin-left': '500px',
-                'border-radius': '10px'
+                'margin-left': '80%',
+                'border-radius': '10px',
+                'max-width': '600px'
             });
             $('.delete-btn:hover').css({
                 'background-color': 'rgb(173, 0, 0)',
-                'transform': 'cale(1.1)',
+                'transform': 'scale(1.1)',
                 'transition': 'all 0.3s ease-in-out'
             });
         }
